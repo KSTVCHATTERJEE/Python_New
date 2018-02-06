@@ -31,9 +31,11 @@ ind=[1,2,-3]
 y=np.take(a,ind)
 print(y)
 
+#%% mask command
 mask=np.array([0,1,1,0,0,1,0,0],dtype=bool)
 y=a[mask]
 print(y)
+
 
 y=np.compress(mask,a)
 print(y)
