@@ -74,6 +74,32 @@ import numpy as np
 pd.pivot_table(studentDF, index=['course','sclass'],values=['total','python'], aggfunc=[np.sum,np.mean,len])
 
 
+studentDF1=pd.read_csv('students2.csv')
+studentDF1['total']=studentDF1['python']+studentDF1['sas']+studentDF1['hadoop']
+studentDF1
+
+studentDF2=pd.read_csv('students.csv')
+studentDF2
+
+studentDF2.select_dtypes(['object'])
+
+studentDF2['rollno'].dtype
+
+studentDF2.index=studentDF2.rollno
+studentDF2
+
+round(studentDF2.describe(),1)
+
+studentDF2.groupby('course')['sclass'].describe()
+studentDF2.groupby('course')['sclass'].describe().unstack()
+
+studentDF2.groupby('sclass')
+
+studentDF2.groupby('sclass').aggregate(['min',np.median,max])
+
+studentDF2[['sclass','python','sas']].groupby('sclass').aggregate(['min',np.median,max, np.sum,np.std])
+
+studentDF2[['python']]
 
 
 
