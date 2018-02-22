@@ -101,6 +101,37 @@ studentDF2[['sclass','python','sas']].groupby('sclass').aggregate(['min',np.medi
 
 studentDF2[['python']]
 
+import pandas as pd
+import numpy as np
+
+pd.pivot_table(studentDF2,index='course',values=["sas","hadoop"],aggfunc=[np.mean, np.median,min,max])
+
+
+pd.pivot_table(studentDF2,index=['course','gender'],values=["sas","hadoop"],aggfunc=[np.mean, np.median,min,max])
+
+pd.pivot_table(studentDF2,index='gender',columns='sclass',values='sas').plot(kind='bar')
+
+aggregation={'sas':{'totalsas':'sum','avgsas':'mean'},'hadoop':{'meanhadoop':'mean','stdhadoop':'std'}}
+
+aggregation
+
+studentDF2[studentDF2['sclass']=='C1'].groupby('gender').agg(aggregation)
+
+studentDF2[studentDF2['sclass']=='C1']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
