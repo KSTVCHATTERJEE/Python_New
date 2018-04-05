@@ -18,6 +18,9 @@ FT.ix[2]
 for i in range(299,401):
     blobpol=TextBlob(FT.ix[i]).sentiment[0]
     blobsub=TextBlob(FT.ix[i]).sentiment[1]
-    print(blob)
+    print(blobpol)
+    print(blobsub)
+    
+
     
 
